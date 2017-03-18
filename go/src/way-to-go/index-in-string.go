@@ -28,4 +28,35 @@ func main() {
 	fmt.Println("strCN length:", len(strCN), "rune count:", utf8.RuneCountInString(strCN))
 	fmt.Println(len("牛"))
 	fmt.Println(len("🐂"))
+
+	foxSampleText := "The quick brown fox jumps over the lazy dog"
+
+	sl := strings.Fields(foxSampleText)
+	fmt.Printf("Splitted in slice: %v\n", sl)
+
+	for _, item := range sl {
+		fmt.Printf("%s - ", item)
+	}
+	fmt.Println()
+
+	tabbedSampleText := "helihua|longying|heyimo"
+	sl1 := strings.Split(tabbedSampleText, "|")
+	fmt.Printf("Splitted in slice1: %v\n", sl1)
+
+	for _, val := range sl1 {
+		fmt.Printf("%s - ", val)
+	}
+	fmt.Println()
+
+	joinedStr := strings.Join(sl1, " love ")
+	fmt.Println(joinedStr)
+
+	strCN2 := "赫敏 is a awesome girl, taylor swift is so cute."
+	reader := strings.NewReader(strCN2)
+	readerLen := reader.Len()
+	for readedCount := 0; readedCount < readerLen; readedCount++ {
+		ch, size, _ := reader.ReadRune()
+		fmt.Printf("%d, %d", ch, size)
+		fmt.Println()
+	}
 }
