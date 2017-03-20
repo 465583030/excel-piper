@@ -18,4 +18,11 @@ func main() {
 	for index, rune := range strUTF8 {
 		fmt.Printf("%-2d	%d		%U '%c' % X\n", index, rune, rune, rune, []byte(string(rune)))
 	}
+
+	char := '你'
+	fmt.Println(char)
+	fmt.Printf("%d\n", char)
+	fmt.Printf("%c\n", char)
+	fmt.Printf("%U\n", char)
+
 }
